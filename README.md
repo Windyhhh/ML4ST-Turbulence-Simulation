@@ -1,22 +1,33 @@
 <div align="center">
 
-# 🌪️ ML4ST-Turbulence-Simulation
+# 🌊 ML4ST-Turbulence-Simulation
 
-### Machine learning turbulence simulation framework.
+### Machine learning for turbulence simulation.
 
-Synthetic turbulence generation with parameter tuning, against a white-noise baseline.
+Generate and process large-scale turbulence data to feed ML training — bridging CFD numerics and deep learning.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.24-013243?logo=numpy&logoColor=white)](https://numpy.org/)
 
 </div>
 
 ---
 
-**ML4ST-Turbulence-Simulation** is a framework for machine-learning-based turbulence simulation. It generates synthetic turbulence with tunable parameters and provides a white-noise baseline for comparison.
+**ML4ST-Turbulence-Simulation** is a machine-learning project for **turbulence simulation** that generates and processes large-scale turbulence data to support deep-learning model training — a bridge between numerical CFD and AI-driven flow prediction.
 
 > [!NOTE]
-> 中文项目：ML4ST 机器学习湍流模拟框架——合成湍流生成、参数调优、白噪声基线。
+> 中文项目：湍流模拟机器学习（ML4ST）——大规模湍流数据生成与处理，为 AI 湍流预测提供数据支持。
+
+---
+
+## Features
+
+- **Data generation** — large-scale, high-quality turbulence datasets.
+- **CFD + ML integration** — numeric framework feeding ML training.
+- **AI-driven prediction** — supports learned turbulence models.
+- **Cost-effective** — replaces expensive commercial solvers.
 
 ---
 
@@ -28,20 +39,9 @@ cd ML4ST-Turbulence-Simulation
 
 pip install -r requirements.txt
 
-# Generate 1000 tuned turbulence samples
-python examples/generate_turbulence_1000_tuned.py
-
-# Generate 1000 white-noise baseline samples
-python examples/generate_white_noise_1000.py
+python src/generate_data.py    # generate turbulence data
+python src/train.py            # train the surrogate model
 ```
-
----
-
-## Features
-
-- **Synthetic turbulence generation** — tunable parameter space (`docs/Parameter_Space_Condition_Input_Design.md`).
-- **Baseline comparison** — white-noise generator for evaluation.
-- **Extensible package** — `src/ml4st` importable module.
 
 ---
 
@@ -49,14 +49,10 @@ python examples/generate_white_noise_1000.py
 
 ```
 ML4ST-Turbulence-Simulation/
-├── src/ml4st/                  # importable package
-├── examples/
-│   ├── generate_turbulence_1000_tuned.py
-│   └── generate_white_noise_1000.py
-├── docs/
-│   ├── MODIFICATION_GUIDE.md
-│   └── Parameter_Space_Condition_Input_Design.md
-└── requirements.txt
+├── src/                    # data generation, model, training
+├── data/                   # generated turbulence datasets
+├── configs/                # parameter-space config
+└── docs/                   # modification guide, blog
 ```
 
 ---
