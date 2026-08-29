@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌊 ML4ST-Turbulence-Simulation
+# 湍流仿真框架 | ML4ST-Turbulence-Simulation
 
 ### Machine learning for turbulence simulation.
 
